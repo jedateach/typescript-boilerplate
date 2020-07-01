@@ -1,0 +1,36 @@
+{
+  "name": "@jedateach/typescript-boilerplate",
+  "version": "1.0.0",
+  "description": "A best effort at a typescript library that supports browser-based demonstration, and tests, with code coverage",
+  "main": "dist/index.js",
+  "scripts": {
+    "start": "node dist/mycode.umd.js",
+    "dev": "run-p dev:server dev:watch",
+    "dev:server": "live-server --ignore=node_modules dist",
+    "dev:watch": "onchange src/* -- npm run build",
+    "build": "run-s build:compile bundle:umd copy",
+    "copy": "copyfiles -f public/index.html dist/",
+    "build:compile": "tsc --project .",
+    "bundle:umd": "run-s bundle:lib:umd bundle:demo:umd",
+    "bundle:lib:umd": "rollup -c -f umd dist/esnext/mylib/index.js --name=mylib --file=dist/mylib.umd.js --sourcemap",
+    "bundle:demo:umd": "rollup -c -f umd dist/esnext/index.js --globals mylib:mylib --file=dist/demo.umd.js --sourcemap",
+    "test": "testem ."
+  },
+  "keywords": [
+    "typescript",
+    "boilerplate",
+    "tests",
+    "coverage"
+  ],
+  "author": "Jeremy Shipman <jeremy@burnbright.net>",
+  "license": "ISC",
+  "devDependencies": {
+    "copyfiles": "^2.3.0",
+    "live-server": "^1.2.1",
+    "npm-run-all": "^4.1.5",
+    "onchange": "^7.0.2",
+    "rollup": "^2.18.1",
+    "rollup-plugin-sourcemaps": "^0.6.2",
+    "typescript": "^3.9.5"
+  }
+}

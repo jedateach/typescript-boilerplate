@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+        "target": "ES5",
+        "module": "ESNext",
+        "moduleResolution": "node",
+        "outDir": "dist/esnext",
+        "baseUrl": "./",
+        "paths": {
+            "mylib": ["src/mylib"]
+        },
+        "inlineSourceMap": true,
+        "inlineSources": true
+    }
+}
