@@ -21,7 +21,9 @@
     "test:server": "testem server .",
     "cov:instrument": "nyc instrument dist/esnext/src/mylib dist/mylib_instrumented",
     "cov:view": "nyc report && live-server coverage/lcov-report",
-    "clean": "rm -Rf dist"
+    "docs:build": "typedoc --tsconfig src",
+    "docs:view": "live-server docs",
+    "clean": "rm -Rf dist docs coverage tmp"
   },
   "keywords": [
     "typescript",

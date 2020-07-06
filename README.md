@@ -11,6 +11,7 @@ Combines the following technologies:
 * **Nyc**: Coverage instrumentation + reporting
 * **Prettier**: Code formatting
 * **ESLint**: Code linting
+* **Typedoc**: API Documentation
 
 The boilerplate refers to the library as `mylib`.
 
@@ -21,8 +22,9 @@ This example project demonstrates how to:
 * [x] View in the browser with live reload + file watching
 * [x] Run tests in the browser with Testem
 * [x] Get code coverage reporting via istanbul/nyc
+* [x] Produce API documentation for library
 * [ ] Continuously integrate - run tests
-* [ ] Continuously publish npm package
+* [ ] Continuously publish npm package, and documentation website
 
 ## Un-frequently asked questions
 
@@ -30,7 +32,9 @@ This example project demonstrates how to:
 
 Jest runs tests purely in node, which makes it harder to develop a visual library, such as one that uses the html canvas.
 
+Testem on the other hand, can run a server, and serve tests to any browser. This is useful for automated cross-browser testing.
+
 ## TODO
 
 * [ ] Find out how to improve source maps so that `esnext` path doesn't show up.
-* [ ] Consider converting project to a yeoman project
+* [ ] Consider converting project to a yeoman project for fast deploy of new projects

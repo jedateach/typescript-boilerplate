@@ -10,5 +10,12 @@
         },
         "inlineSourceMap": true,
         "inlineSources": true
+    },
+    "typedocOptions": {
+        "inputFiles": "src",
+        "mode": "file",
+        "out": "docs/",
+        "name": "mylib",
+        "theme": "minimal"
     }
 }
