@@ -1,21 +1,21 @@
 {
-    "compilerOptions": {
-        "target": "ES5",
-        "module": "ESNext",
-        "moduleResolution": "node",
-        "outDir": "dist/esnext",
-        "baseUrl": "./",
-        "paths": {
-            "mylib": ["src/mylib"]
-        },
-        "inlineSourceMap": true,
-        "inlineSources": true
+  "compilerOptions": {
+    "target": "ES5",
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "outDir": "dist/esnext",
+    "baseUrl": "./",
+    "paths": {
+      "mylib": ["src/mylib"]
     },
-    "typedocOptions": {
-        "inputFiles": "src",
-        "mode": "file",
-        "out": "docs/",
-        "name": "mylib",
-        "theme": "minimal"
-    }
+    "inlineSourceMap": true,
+    "inlineSources": true
+  },
+  "typedocOptions": {
+    "inputFiles": "src",
+    "mode": "file",
+    "out": "docs/",
+    "name": "mylib",
+    "theme": "minimal"
+  }
 }
