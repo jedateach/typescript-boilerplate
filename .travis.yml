@@ -1,0 +1,39 @@
+language: node_js
+
+node_js:
+  - 10
+stages:
+  - test
+  - deploy
+before_script:
+  - "npm run build"
+jobs:
+  include:
+    - stage: test
+      addons:
+        chrome: stable
+        firefox: latest
+      script: npm test
+    - stage: npm release
+      script: "echo releasing npm package..."
+      deploy:
+        provider: npm
+        email: $NPM_EMAIL
+        access: public
+        api_key:
+          secure: $NPM_TOKEN
+        on:
+          tags: true
+    - stage: github pages publish
+      script: "npm run build:docs"
+      before_deploy:
+        # allow dist and docs in git
+        - sed -i '/dist/d' .gitignore
+        - sed -i '/docs/d' .gitignore
+      deploy:
+        provider: pages
+        skip_cleanup: true
+        github_token: $GITHUB_TOKEN
+        keep_history: true
+        on:
+          branch: master
